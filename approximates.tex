@@ -52,11 +52,18 @@ So for small numbers $x \approx 0$ we have $e^x = 1 + x$.
     So without effort we can approximate the $e^{3.3} \approx 10 e = 27.1$.
     What's left to do is correct for the overestimation.
     \begin{equation*}
-        0.00258 \times e
-            \approx 0.0258 \times 2.71828
-            \approx 0.0701
+        \begin{split}
+            0.00258 \times e
+                &\approx 0.0258 \times 2.71828 \\
+                &\approx 0.026 \times 0.027 \\
+                &\approx 0.0001 \times (26 \times 27) \\
+                &\approx 0.0001 \times ((25 + 1) \times (25 + 2)) \\
+                &\approx 0.0001 \times (25^2 + 75 + 2) \\
+                &\approx 0.0001 \times (625 + 75 + 2) \\
+                &\approx 0.0702
+        \end{split}
     \end{equation*}
-    Hence the final approximation is $e^{3.3} \approx 27.1828 - 0.0701 = 27.1127$.
+    Hence the final approximation is $e^{3.3} \approx 27.1828 - 0.0702 = 27.1126$.
     The correct answer is $e^{3.3} = 27.1126389...$.
 \end{example}
 
