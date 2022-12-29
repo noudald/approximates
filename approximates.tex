@@ -1,0 +1,64 @@
+\documentclass[10pt]{article}
+
+\usepackage[english]{babel}
+\usepackage{
+    amsmath,
+    amssymb,
+    amsthm,
+    bm,
+    fullpage,
+}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}{Example}[section]
+
+\begin{document}
+
+\title{Approximates for the working mathematician}
+\author{Noud Aldenhoven}
+\date{\today}
+\maketitle
+
+\section{Log and exponential}
+
+The exponential constant is approximated as
+\begin{equation*}
+    e \approx 2.71828
+\end{equation*}
+
+\begin{align*}
+    \log(1) &= 0,               & e^0 &= 1 \\
+    \log(2) &\approx 0.6931,    & e^{0.69314} &\approx 2 \\
+    \log(e) &= 1,               & e^{1} &= e \\
+    \log(10) &\approx 2.3025    & e^{2.30258} &\approx 10,
+\end{align*}
+
+Note that the Tayler expension of $e^x$ is
+\begin{equation*}
+    e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + ...,
+\end{equation*}
+So for small numbers $x \approx 0$ we have $e^x = 1 + x$.
+
+\begin{example}
+    This example is from Richard Feynman's autobiography ``Surely You're Joking Mr. Feynman''.
+    How to approximate $e^{3.3}$ fast?
+    Note that
+    \begin{equation*}
+        e^{3.3} = e^{2.30258} e^{1} e^{-0.00258}
+            \approx 10 \times e \times (1 - 0.00258)
+            = 10 \times e - 0.0258 \times e
+    \end{equation*}
+    So without effort we can approximate the $e^{3.3} \approx 10 e = 27.1$.
+    What's left to do is correct for the overestimation.
+    \begin{equation*}
+        0.00258 \times e
+            \approx 0.0258 \times 2.71828
+            \approx 0.0701
+    \end{equation*}
+    Hence the final approximation is $e^{3.3} \approx 27.1828 - 0.0701 = 27.1127$.
+    The correct answer is $e^{3.3} = 27.1126389...$.
+\end{example}
+
+
+\end{document}
